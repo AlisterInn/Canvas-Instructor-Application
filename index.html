@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Canvas Instructor</title>
+    </head>
+    <body>
+        <h2>Students</h2>
+        <!--Here we will be looping over the students dictionary-->
+        <ul>
+            {% for student in students %}
+                <li>{{ student['name'] }}</li>
+            {% endfor %}
+        </ul>
+
+        <!--Here we are making a form to add new students-->
+        <form action="/add" method="post">
+            <lable for="name">Add New Student</lable>
+            <input type="text" name="name" required>
+            <input type="hidden" name="type" value="student">
+            <button type="submit">Add</button>
+        </form>
+
+        <h2>Assignments</h2>
+        <!--Here we will be looping over the assignments-->
+        <ul>
+            {% for assigment in assignments %}
+                <li>{{ assigment['title'] }}</li>
+            {% endfor %}
+        </ul>
+
+        <!--Here we are making a form to add new assignments-->
+        <form action="/add" method="post">
+            <lable for="title">Post New Assignment</lable>
+            <input type="text" name="title" required>
+            <input type="hidden" name="type" value="assignment">
+            <button type="submit">Add</button>
+        </form>
+
+        <h2>Tests</h2>
+        <!--Here we will be looping over the tests-->
+        <ul>
+            {% for test in tests %}
+                <li>{{ test['title'] }}</li>
+            {% endfor %}
+        </ul>
+
+        <!--Here we are making a form to add new tests-->
+        <form action="/add" method="post">
+            <lable for="title">Post New Test</lable>
+            <input type="text" name="title" required>
+            <input type="hidden" name="type" value="test">
+            <button type="submit">Add</button>
+        </form>
+    </body>
+</html>
